@@ -20,6 +20,8 @@ By default the whole repo will be imported if the `file_path` flag is not specif
 - `--filePath=` - Optional: Relative path to one or more files. If passing in more than one file use a comma `,` to separate. e.g., `--filePath=Dockerfile,kubernetes/goof-deployment.yaml`
 - `@args` - Optional: You can also read one or more arguments from a file. 
 
+- ** Flags or arguments cannot be repeated. If you have a flag defined in the args file then you cannot also pass that same flag in on the command-line. **
+
 
 # Examples
 You can find usage instructions by running:
@@ -53,7 +55,7 @@ How to import multiple files that exist in a directory:
 snyk-projects-import --token=<Snyk Token> --gitId=<git integration id> --orgId=<organization id> --owner=<repo owner> --repoName=<repo name> --branchName=<branch name> --filePath=kubernetes/goof-deployment.yaml, kubernetes/goof-mongo-deployment.yaml
 ```
 
-Pass in all flags/arguements via the args file:
+Pass in all flags/arguments via the args file:
 ```bash
 snyk-projects-import @args
 ```
