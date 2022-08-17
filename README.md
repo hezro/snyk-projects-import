@@ -38,7 +38,7 @@ snyk-projects-import --token=<Snyk Token> --gitId=<git integration id> --orgId=<
 
 Use the args files to pass in the Snyk Token:
 ```bash
-echo --token=<snyk token>\n > args
+echo --token=<snyk token> > args
 ```
 ```bash
 snyk-projects-import @args --gitId=<git integration id> --orgId=<organization id> --owner=<repo owner> --repoName=<repo name> --branchName=<branch name>
