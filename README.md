@@ -69,3 +69,5 @@ Args file example:
 --repoName=goof
 --branchName=main
 ```
+# Binaries
+Pre-built binaries for Linux, MacOS amd64, and MacOS arm64 (m1 chips) : https://github.com/hezro/snyk-projects-import/tree/main/bin
