@@ -15,7 +15,7 @@ import (
 
 const base_url = "https://api.snyk.io/api/v1"
 
-// Define flags for the utility
+// Define flags for the utility.
 var (
 	snyk_token         = kingpin.Flag("token", "Snyk API Token").Required().String()
 	git_integration_id = kingpin.Flag("gitId", "Git/SCM integration ID").Required().String()
@@ -26,7 +26,7 @@ var (
 	file_path          = kingpin.Flag("filePath", "Relative path to one or more files").String()
 )
 
-// Define the structs for the json fields
+// Define the structs for the json fields.
 type DataAttributes struct {
 	Target Target  `json:"target"`
 	Files  []Files `json:"files"`
@@ -40,23 +40,23 @@ type Files struct {
 	Path string `json:"path"`
 }
 
-// Set up the http client with a 10 second timeout
+// Set up the http client with a 10 second timeout.
 func httpClient() *http.Client {
 	client := &http.Client{Timeout: 10 * time.Second}
 	return client
 }
 
-// Import file(s) or the whole repo into Snyk
+// Import file(s) or the whole repo into Snyk.
 func snyk_import(client *http.Client, snyk_token string, git_integration_id string, org_id string, repo_owner string, repo_name string, branch_name string, file_path []string) []byte {
 	url := base_url + "/org/" + org_id + "/integrations/" + git_integration_id + "/import"
 
-	// Build the json data
+	// Build the json data.
 	target := DataAttributes{}
 	target.Target.Owner = repo_owner
 	target.Target.Name = repo_name
 	target.Target.Branch = branch_name
 
-	// If files are passed in then add them to the json data
+	// If files are passed in then add them to the json data.
 	file_count := len(file_path)
 	if file_count > 0 {
 		data := Files{}
