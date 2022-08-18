@@ -1,6 +1,7 @@
 # snyk-projects-import
 
-This Go utility allows you import a single file, multiple files, or the whole repo.
+## Description:
+This Go utility allows you import a single file, multiple files, or the whole repo. This could also be used to "refresh" the repo.
 
 
 ***
